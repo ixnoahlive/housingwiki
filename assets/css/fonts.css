@@ -1,0 +1,48 @@
+/* Icons font */
+@font-face {
+    font-family: 'FA';
+    src: url('../fonts/fa/fa-brands-400.woff2') url('../fonts/fa/fa-regular-400.woff2') url('../fonts/fa/fa-v2compatibility.woff2');
+}
+
+@font-face {
+    font-family: 'FA';
+    src: url('../fonts/fa/fa-solid-900.woff2');
+    font-weight: 900;
+}
+
+.icon {
+    font-family: 'FA';
+    text-decoration: none;
+}
+
+.icon-solid {
+    font-family: 'FA';
+    font-weight: 900;
+    text-decoration: none;
+}
+
+
+/* Neuton */
+@font-face {
+    font-family: 'Neuton';
+    src: url('../fonts/neuton/Neuton-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('../fonts/neuton/Neuton-Bold.ttf');
+    font-weight: bold;
+}
+
+
+/* Montserrat */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat/Montserrat-Variable.ttf')
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat/Montserrat-Variable-Italic.ttf');
+    font-style: italic;
+}

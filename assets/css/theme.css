@@ -1,0 +1,16 @@
+:root {
+    --mono-1: #111;
+    --mono-2: #333;
+    --mono-3: #555;
+    --mono-4: #777;
+    --mono-5: #999;
+    --mono-6: #bbb;
+    --mono-7: #ddd;
+    --mono-8: #fff;
+
+    --background-color: var(--mono-2);
+    --text-color: var(--mono-7);
+
+    --link-color: cornflowerblue;
+    --link-visited-color: slateblue;
+}

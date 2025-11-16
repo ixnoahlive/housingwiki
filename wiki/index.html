@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+</head>
+
+<body>
+    <div class="search-overlay-container" hidden id="search-screen">
+        <div class="search-popup" id="search-popup">
+                <input placeholder="Search for a page" id="search-input">
+        </div>
+    </div>
+    <div class="body-container">
+
+        <!-- Navigation -->
+        <div class="content-container navigation-bar">
+            <a href=".." style="color: white; text-decoration: none;"><b>Hypixel Housing Wiki</b></a>
+            <button class="search-button" id="search-button">Search</button>
+        </div>
+
+        
+
+        <!-- Site -->
+        <div class="content-container" id="success">
+            <h1 id="page-title">_______</h1>
+            
+            <div class="page-metadata">
+                <span class="subtext">From the Housing Wiki</span>
+                <span class="subtext" id="page-metadata-info"></span>
+            </div>
+
+            <div class="content" id="content"></div>
+        </div>
+        <div class="content-container" hidden id="error">
+                
+        </div>    
+        <div class="content-container">
+            <span class="subtext">Not affiliated with Mojang A.B., Hypixel Inc. or Hypixel Studios Ltd. All content on this site is shown with non-commercial intent.</span>
+        </div>
+        
+    </div>
+</body>
+
+<script src="../parser.js" type="module"></script>
+<script src="../loader.js" type="module"></script>
+<script src="../search.js" type="module"></script>
+
+</html>

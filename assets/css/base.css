@@ -1,0 +1,215 @@
+/* Top Level */
+body {
+    margin: 0;
+
+    color: var(--mono-7);
+
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../media/bg.jpg');
+    background-size: cover;
+    background-position-y: 50%;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+/* Content Container Level */
+.content-container {
+    padding: 1.5em 2em;
+    margin: 0.5em;
+
+    backdrop-filter: blur(64px) brightness(40%);
+
+    font-size: 90%;
+
+    border-radius: 0.5em;
+
+    /* I don't know why this works or how this works, but when I remove the min(x, 0) function, it breaks. */
+    width: min(calc(100vw - 5em), 64em);
+    max-width: 64em;
+}
+
+.page-metadata {
+    display: flex;
+
+    justify-content: space-between;
+    flex-direction: column;
+
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+
+    border-bottom: solid 2px var(--mono-3);
+}
+
+#page-metadata-info {
+    display: none;
+}
+
+/* Navigational */
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-direction: column;
+    text-align: center;
+}
+.search-button {
+    background-color: #ffffffaa;
+    padding: 0.3em 10em 0.3em 0.6em;
+    border-radius: 1em;
+    user-select: none;
+    border: none; outline: none;
+    opacity: 75%;
+    transition: 0.1s;
+    text-align: left;
+}
+.search-button:hover { transition: 0.1s; opacity: 100%; }
+
+.search-popup {
+    position: absolute;
+    z-index: 999;
+    
+    left: 0;
+    right: 0;
+    top: 30%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    max-width: 32em;
+    height: 33vh;
+
+    padding: 0;
+    overflow: hidden;
+
+    background-color: #00000066;
+    border-radius: 0.5em;
+    animation: ease-out normal 0.2s searchIn;
+    pointer-events: none;
+}
+
+.search-popup > input {
+    outline: none;
+    border: none;
+    border-radius: none;
+    width: 100%;
+    padding: 1em;
+    background: none;
+    color: white;
+    border-bottom: 1px var(--mono-2) solid;
+}
+
+.search-popup:hover {
+    background-color: red;
+}
+
+.search-overlay-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    backdrop-filter: blur(16px) brightness(75%);
+    z-index: 20;
+    transition: 0.2s;
+    animation: ease-in-out normal 0.15s blurIn
+}
+
+
+/* Content Level */
+.table-of-contents {
+    border-color: var(--mono-4);
+    width: max-content;
+}
+
+.subtext {
+    font-size: small;
+    color: var(--mono-5)
+}
+
+.wrapped-multilist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.wrapped-multilist > div {
+    flex: 1
+}
+
+
+/* Elements */
+h1 {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+h2, h3, h4, h5, h6 {
+    border-bottom: solid 2px var(--mono-3)
+}
+
+hr {
+    margin: 1.5em 0em;
+    border: solid 1px white;
+    opacity: 20%;
+}
+
+a { color: var(--link-color) }
+a:visited { color: var(--link-visited-color) }
+a:hover { filter: brightness(1.5) }
+
+
+/* Media Queries */
+@media (min-width: 1000px) {
+    .content-container:first-of-type {
+        margin-top: 2em;
+    }
+    .content-container:last-of-type {
+        margin-bottom: 4em;
+    }
+
+    .content-container {
+        font-size: 100%;
+    }
+    .page-metadata {
+        flex-direction: row;
+        gap: 0em;
+    }
+    #page-metadata-info {
+        text-align: right;
+        display: block
+    }
+
+    .navigation-bar {
+        flex-direction: row;
+    }
+}
+
+/* Animations */
+@keyframes blurIn {
+    0% {
+        backdrop-filter: blur(0px) brightn;
+    }
+    100% {
+        backdrop-filter: blur(16px);
+    }
+}
+@keyframes searchIn {
+    0% {
+        transform: scale(100%) translateY(50px);
+        opacity: 0%;
+    }
+    100% {
+        transform: scale(100%) translateY(0px);
+        opacity: 100%;
+    }
+}
